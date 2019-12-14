@@ -63,18 +63,20 @@ void autonomous(void) {
   // Insert autonomous user code here.
   // ..........................................................................
 
-  FrontLeft.spinFor(1.5, vex::rotationUnits::rev, false);
-  FrontRight.spinFor(1.5, vex::rotationUnits::rev, false);
-  BackRight.spinFor(1.5, vex::rotationUnits::rev, false);
-  BackLeft.spinFor(1.5, vex::rotationUnits::rev, true);
+  FrontLeft.spinFor(-1.8, vex::rotationUnits::rev, false);
+  FrontRight.spinFor(-1.8, vex::rotationUnits::rev, false);
+  BackRight.spinFor(-1.8, vex::rotationUnits::rev, false);
+  BackLeft.spinFor(-1.8, vex::rotationUnits::rev, true);
 
- ClawLeft.spin(vex::directionType::rev, 95,vex::velocityUnits::pct);
-  ClawRight.spin(vex::directionType::rev, 95,vex::velocityUnits::pct);
+  //ClawLeft.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
+  //ClawRight.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
 
-  FrontLeft.spinFor(-1.5, vex::rotationUnits::rev, false);
-  FrontRight.spinFor(-1.5, vex::rotationUnits::rev, false);
-  BackRight.spinFor(-1.5, vex::rotationUnits::rev, false);
-  BackLeft.spinFor(-1.5, vex::rotationUnits::rev, true);
+  FrontLeft.spinFor(1.8, vex::rotationUnits::rev, false);
+  FrontRight.spinFor(1.8, vex::rotationUnits::rev, false);
+  BackRight.spinFor(1.8, vex::rotationUnits::rev, false);
+  BackLeft.spinFor(1.8, vex::rotationUnits::rev, true);
+  ClawLeft.stop();
+  ClawRight.stop();
 }
 
 // we're doomed
