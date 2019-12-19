@@ -63,20 +63,31 @@ void autonomous(void) {
   // Insert autonomous user code here.
   // ..........................................................................
 
-  FrontLeft.spinFor(-1.8, vex::rotationUnits::rev, false);
-  FrontRight.spinFor(-1.8, vex::rotationUnits::rev, false);
-  BackRight.spinFor(-1.8, vex::rotationUnits::rev, false);
-  BackLeft.spinFor(-1.8, vex::rotationUnits::rev, true);
+//FrontLeft.spinFor(-1.8, vex::rotationUnits::rev, false);
+ // FrontRight.spinFor(-1.8, vex::rotationUnits::rev, false);
+//  BackRight.spinFor(-1.8, vex::rotationUnits::rev, false);
+ // BackLeft.spinFor(-1.8, vex::rotationUnits::rev, true);
 
   //ClawLeft.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
   //ClawRight.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
 
-  FrontLeft.spinFor(1.8, vex::rotationUnits::rev, false);
-  FrontRight.spinFor(1.8, vex::rotationUnits::rev, false);
-  BackRight.spinFor(1.8, vex::rotationUnits::rev, false);
-  BackLeft.spinFor(1.8, vex::rotationUnits::rev, true);
-  ClawLeft.stop();
-  ClawRight.stop();
+//  FrontLeft.spinFor(1.8, vex::rotationUnits::rev, false);
+//  FrontRight.spinFor(1.8, vex::rotationUnits::rev, false);
+//  BackRight.spinFor(1.8, vex::rotationUnits::rev, false);
+//  BackLeft.spinFor(1.8, vex::rotationUnits::rev, true);
+// ClawLeft.stop();
+//  ClawRight.stop(); 
+
+//Attempt to get > 1 point auto
+
+FrontLeft.spinFor(2, vex::rotationUnits::rev, false);
+FrontRight.spinFor(2, vex::rotationUnits::rev, false);
+BackRight.spinFor(2, vex::rotationUnits::rev, false);
+BackLeft.spinFor(2, vex::rotationUnits::rev, true);
+
+ClawLeft.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
+ClawRight.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
+
 }
 
 // we're doomed
@@ -133,9 +144,7 @@ void autonomous(void) {
    
 
 void usercontrol(void) {
-  // User control code here, inside the loop
-  // Variables here SVP
-  
+  // User control code here, inside the loop 
 
  
 
