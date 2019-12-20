@@ -93,8 +93,10 @@ FrontRight.spinFor(-2, vex::rotationUnits::rev, false);
 BackRight.spinFor(-2, vex::rotationUnits::rev, false);
 BackLeft.spinFor(-2, vex::rotationUnits::rev, true);
 
-FrontRight.spinFor(2, vex::rotationUnits::rev, false);
+FrontRight.spinFor(2, vex::rotationUnits::rev, false);  //rotate in order to face Score zone
 BackRight.spinFor(2, vex::rotationUnits::rev, false);
+
+
 
 
 }
