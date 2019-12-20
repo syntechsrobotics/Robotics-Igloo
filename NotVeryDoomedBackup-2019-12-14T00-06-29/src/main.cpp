@@ -80,22 +80,13 @@ void autonomous(void) {
 
 //Attempt to get > 1 point auto
 
-ClawLeft.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
-ClawRight.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
-
 FrontLeft.spinFor(2, vex::rotationUnits::rev, false);
 FrontRight.spinFor(2, vex::rotationUnits::rev, false);
 BackRight.spinFor(2, vex::rotationUnits::rev, false);
 BackLeft.spinFor(2, vex::rotationUnits::rev, true);
 
-FrontLeft.spinFor(-2, vex::rotationUnits::rev, false);
-FrontRight.spinFor(-2, vex::rotationUnits::rev, false);
-BackRight.spinFor(-2, vex::rotationUnits::rev, false);
-BackLeft.spinFor(-2, vex::rotationUnits::rev, true);
-
-FrontRight.spinFor(2, vex::rotationUnits::rev, false);
-BackRight.spinFor(2, vex::rotationUnits::rev, false);
-
+ClawLeft.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
+ClawRight.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
 
 }
 
