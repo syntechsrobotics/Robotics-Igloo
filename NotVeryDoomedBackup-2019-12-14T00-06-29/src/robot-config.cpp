@@ -17,10 +17,11 @@ controller Controller1 = controller(primary);
 motor ClawLeft = motor(PORT6, ratio18_1, false);
 motor ClawRight = motor(PORT7, ratio18_1, true);
 motor Arm2 = motor(PORT8, ratio36_1, true);
+sonar RearRange = sonar(Brain.ThreeWirePort.A);
 
 // VEXcode generated functions
-
-
+// define variable for remote controller enable/disable
+bool RemoteControlCodeEnabled = true;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Text.

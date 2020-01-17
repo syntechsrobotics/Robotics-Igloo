@@ -1,3 +1,59 @@
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         1
+// FrontRight           motor         11
+// Arm                  motor         3
+// BackLeft             motor         4
+// BackRight            motor         5
+// Controller1          controller
+// ClawLeft             motor         6
+// ClawRight            motor         7
+// Arm2                 motor         8
+// RearRange            sonar         A, B
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         1
+// FrontRight           motor         11
+// Arm                  motor         3
+// BackLeft             motor         4
+// BackRight            motor         5
+// Controller1          controller
+// ClawLeft             motor         6
+// ClawRight            motor         7
+// Arm2                 motor         8
+// RearRange            sonar         A, B
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         1
+// FrontRight           motor         11
+// Arm                  motor         3
+// BackLeft             motor         4
+// BackRight            motor         5
+// Controller1          controller
+// ClawLeft             motor         6
+// ClawRight            motor         7
+// Arm2                 motor         8
+// RearRange            sonar         A, B
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         1
+// FrontRight           motor         11
+// Arm                  motor         3
+// BackLeft             motor         4
+// BackRight            motor         5
+// Controller1          controller
+// ClawLeft             motor         6
+// ClawRight            motor         7
+// Arm2                 motor         8
+// RangeFinderA         sonar         A, B
+// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
@@ -10,15 +66,15 @@
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         1               
-// FrontRight           motor         11              
-// Arm                  motor         3               
-// BackLeft             motor         4               
-// BackRight            motor         5               
-// Controller1          controller                    
-// ClawLeft             motor         6               
-// ClawRight            motor         7               
-// Arm2                 motor         8               
+// FrontLeft            motor         1
+// FrontRight           motor         11
+// Arm                  motor         3
+// BackLeft             motor         4
+// BackRight            motor         5
+// Controller1          controller
+// ClawLeft             motor         6
+// ClawRight            motor         7
+// Arm2                 motor         8
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -63,43 +119,92 @@ void autonomous(void) {
   // Insert autonomous user code here.
   // ..........................................................................
 
-//FrontLeft.spinFor(-1.8, vex::rotationUnits::rev, false);
- // FrontRight.spinFor(-1.8, vex::rotationUnits::rev, false);
-//  BackRight.spinFor(-1.8, vex::rotationUnits::rev, false);
- // BackLeft.spinFor(-1.8, vex::rotationUnits::rev, true);
+  /*
 
-  //ClawLeft.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
-  //ClawRight.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
+//one point auto V
 
-//  FrontLeft.spinFor(1.8, vex::rotationUnits::rev, false);
-//  FrontRight.spinFor(1.8, vex::rotationUnits::rev, false);
-//  BackRight.spinFor(1.8, vex::rotationUnits::rev, false);
-//  BackLeft.spinFor(1.8, vex::rotationUnits::rev, true);
-// ClawLeft.stop();
-//  ClawRight.stop(); 
+  FrontLeft.spinFor(-1.8, vex::rotationUnits::rev, false);
+  FrontRight.spinFor(-1.8, vex::rotationUnits::rev, false);
+  BackRight.spinFor(-1.8, vex::rotationUnits::rev, false);
+  BackLeft.spinFor(-1.8, vex::rotationUnits::rev, true);
 
-//Attempt to get > 1 point auto
+  ClawLeft.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
+  ClawRight.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
 
-ClawLeft.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
-ClawRight.spin(vex::directionType::fwd, 95,vex::velocityUnits::pct);
+  FrontLeft.spinFor(1.8, vex::rotationUnits::rev, false);
+  FrontRight.spinFor(1.8, vex::rotationUnits::rev, false);
+  BackRight.spinFor(1.8, vex::rotationUnits::rev, false);
+  BackLeft.spinFor(1.8, vex::rotationUnits::rev, true);
+  ClawLeft.stop();
+  ClawRight.stop(); */
 
-FrontLeft.spinFor(2, vex::rotationUnits::rev, false);
-FrontRight.spinFor(2, vex::rotationUnits::rev, false);
-BackRight.spinFor(2, vex::rotationUnits::rev, false);
-BackLeft.spinFor(2, vex::rotationUnits::rev, true);
+  // Attempt to get > 1 point auto
 
-FrontLeft.spinFor(-2, vex::rotationUnits::rev, false);
-FrontRight.spinFor(-2, vex::rotationUnits::rev, false);
-BackRight.spinFor(-2, vex::rotationUnits::rev, false);
-BackLeft.spinFor(-2, vex::rotationUnits::rev, true);
+  
 
-FrontRight.spinFor(2, vex::rotationUnits::rev, false);  //rotate in order to face Score zone
-BackRight.spinFor(2, vex::rotationUnits::rev, false);
+  while (RearRange.distance(distanceUnits::cm) < 110) {
+    FrontLeft.spin(vex::directionType::fwd, 30,
+                     vex::velocityUnits::pct);
+    FrontRight.spin(vex::directionType::fwd, 30,
+                     vex::velocityUnits::pct);
+    BackRight.spin(vex::directionType::fwd, 30,
+                     vex::velocityUnits::pct);
+    BackRight.spin(vex::directionType::fwd, 30,
+                     vex::velocityUnits::pct);
+    ClawRight.spin(vex::directionType::fwd, 90,
+                     vex::velocityUnits::pct);   
+    ClawLeft.spin(vex::directionType::fwd, 90,
+                     vex::velocityUnits::pct); 
+    wait(50, msec);           
+  }
 
+  if (RearRange.distance(distanceUnits::cm) > 110){
+   FrontLeft.spin(vex::directionType::rev, 50,
+                     vex::velocityUnits::pct);
+    FrontRight.spin(vex::directionType::rev, 50,
+                     vex::velocityUnits::pct);
+    BackRight.spin(vex::directionType::rev, 50,
+                     vex::velocityUnits::pct);
+    BackRight.spin(vex::directionType::rev, 50,
+                     vex::velocityUnits::pct);
+    ClawRight.stop(); 
+    ClawLeft.stop();
 
+    wait(2, sec);
+    
+    }
+    
+      FrontLeft.stop();
+      FrontRight.stop();
+      BackLeft.stop();
+      BackRight.stop();
 
+FrontRight.spinFor(1.3, vex::rotationUnits::rev, false); //get robot facing towards goal zone
+BackRight.spinFor(1.3, vex::rotationUnits::rev, false);
 
-}
+//while (RearRange.distance(distanceUnits::cm) < 7){
+//  FrontLeft.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+//  FrontRight.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
+//}
+
+FrontRight.spinFor(3, vex::rotationUnits::rev, false); //go to goal zone
+FrontLeft.spinFor(3, vex::rotationUnits::rev, false);
+
+Arm.spinFor(0.3, vex::rotationUnits::rev, false); //Get ramp up
+Arm2.spinFor(0.3, vex::rotationUnits::rev, false);
+
+ ClawRight.spin(vex::directionType::fwd, 60,    //spin outtake
+                     vex::velocityUnits::pct);   
+ ClawLeft.spin(vex::directionType::fwd, 60,
+                     vex::velocityUnits::pct); 
+
+    
+FrontRight.spinFor(-0.0, vex::rotationUnits::rev, false); //run away from goal zone
+FrontLeft.spinFor(-0.9, vex::rotationUnits::rev, false);
+
+ClawLeft.stop();
+ClawRight.stop();
+  }
 
 // we're doomed
 
@@ -112,53 +217,47 @@ BackRight.spinFor(2, vex::rotationUnits::rev, false);
 /*                                                                           */
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
- //Function for ClawSpeed
+// Function for ClawSpeed
 
- int ClawSpeed = 85;
-  int ArmSpeed = 45;
-  int ClawOutSpeed = 90;
-  int ClawDifference = 0;
-  bool DriveSlow = false;
+int ClawSpeed = 85;
+int ArmSpeed = 45;
+int ClawOutSpeed = 90;
+int ClawDifference = 0;
+bool DriveSlow = false;
 
-  void ClawSpeedDown (void){
+void ClawSpeedDown(void) {
 
-    ClawDifference = 5;
-      ClawSpeed = ClawSpeed - ClawDifference;
-      ClawDifference = 0;
-      if (ClawSpeed < 0) {
-        ClawSpeed = ClawSpeed +5;
-      }
-      Controller1.Screen.clearLine();
-      Controller1.Screen.print(ClawSpeed);
-
+  ClawDifference = 5;
+  ClawSpeed = ClawSpeed - ClawDifference;
+  ClawDifference = 0;
+  if (ClawSpeed < 0) {
+    ClawSpeed = ClawSpeed + 5;
   }
+  Controller1.Screen.clearLine();
+  Controller1.Screen.print(ClawSpeed);
+}
 
-  void ClawSpeedUp (void){
+void ClawSpeedUp(void) {
 
-      ClawDifference = 5;
-      ClawSpeed = ClawSpeed + ClawDifference;
-      ClawDifference = 0;
-      if (ClawSpeed > 100) {
-        ClawSpeed = ClawSpeed - 5;
-      }
-       Controller1.Screen.clearLine();
-    Controller1.Screen.print(ClawSpeed);
+  ClawDifference = 5;
+  ClawSpeed = ClawSpeed + ClawDifference;
+  ClawDifference = 0;
+  if (ClawSpeed > 100) {
+    ClawSpeed = ClawSpeed - 5;
   }
+  Controller1.Screen.clearLine();
+  Controller1.Screen.print(ClawSpeed);
+}
 
-  void ClawReset (void){
-    ClawDifference = 0;
-    ClawSpeed = 70;
-    Controller1.Screen.clearLine();
-    Controller1.Screen.print("Output speed reset");
-  }
-    
-   
+void ClawReset(void) {
+  ClawDifference = 0;
+  ClawSpeed = 70;
+  Controller1.Screen.clearLine();
+  Controller1.Screen.print("Output speed reset");
+}
 
 void usercontrol(void) {
-  // User control code here, inside the loop 
-
- 
-
+  // User control code here, inside the loop
 
   while (1) {
     // This is the main execution loop for the user control program.
@@ -171,61 +270,53 @@ void usercontrol(void) {
     // Drive code here pls
     // ........................................................................
 
-    
-
-    if (Controller1.ButtonX.pressing()){
+    if (Controller1.ButtonX.pressing()) {
       DriveSlow = false;
       Controller1.Screen.clearLine();
       Controller1.Screen.print("NORMAL speed");
 
     }
-      
-      
-      else if (Controller1.ButtonB.pressing()){
+
+    else if (Controller1.ButtonB.pressing()) {
 
       DriveSlow = true;
       Controller1.Screen.clearLine();
       Controller1.Screen.print("SLOW speed");
-
     }
 
-    // This is the left part of Tank Drive 
+    // This is the left part of Tank Drive
 
-    if (DriveSlow == false){
+    if (DriveSlow == false) {
       FrontLeft.spin(vex::directionType::fwd, Controller1.Axis3.value(),
-                    vex::velocityUnits::pct);
-      BackLeft.spin(vex::directionType::fwd, Controller1.Axis3.value(),
-                   vex::velocityUnits::pct); //(Axis3+Axis4)/2
-    } 
-      else if (DriveSlow == true){
-       FrontLeft.spin(vex::directionType::fwd, Controller1.Axis3.value()/10,
-                    vex::velocityUnits::pct);
-       BackLeft.spin(vex::directionType::fwd, Controller1.Axis3.value()/10,
                      vex::velocityUnits::pct);
-    }
-    else {
+      BackLeft.spin(vex::directionType::fwd, Controller1.Axis3.value(),
+                    vex::velocityUnits::pct); //(Axis3+Axis4)/2
+    } else if (DriveSlow == true) {
+      FrontLeft.spin(vex::directionType::fwd, Controller1.Axis3.value() / 10,
+                     vex::velocityUnits::pct);
+      BackLeft.spin(vex::directionType::fwd, Controller1.Axis3.value() / 10,
+                    vex::velocityUnits::pct);
+    } else {
       FrontRight.stop(brakeType::hold);
       BackRight.stop(brakeType::hold);
     }
 
-    // This is the right part of the Tank Drive 
+    // This is the right part of the Tank Drive
 
-    if (DriveSlow == false){
-    FrontRight.spin(vex::directionType::fwd, Controller1.Axis2.value(),
-                    vex::velocityUnits::pct);
-    BackRight.spin(vex::directionType::fwd, Controller1.Axis2.value(),
-                   vex::velocityUnits::pct);
-    }
-      else if (DriveSlow == true){
-     FrontRight.spin(vex::directionType::fwd, Controller1.Axis2.value()/10,
-                    vex::velocityUnits::pct);
-     BackRight.spin(vex::directionType::fwd, Controller1.Axis2.value()/10,
-                   vex::velocityUnits::pct);
-    } 
-    else {
+    if (DriveSlow == false) {
+      FrontRight.spin(vex::directionType::fwd, Controller1.Axis2.value(),
+                      vex::velocityUnits::pct);
+      BackRight.spin(vex::directionType::fwd, Controller1.Axis2.value(),
+                     vex::velocityUnits::pct);
+    } else if (DriveSlow == true) {
+      FrontRight.spin(vex::directionType::fwd, Controller1.Axis2.value() / 10,
+                      vex::velocityUnits::pct);
+      BackRight.spin(vex::directionType::fwd, Controller1.Axis2.value() / 10,
+                     vex::velocityUnits::pct);
+    } else {
       FrontRight.stop(brakeType::hold);
       BackRight.stop(brakeType::hold);
-    } 
+    }
 
     // Arm
 
@@ -236,12 +327,12 @@ void usercontrol(void) {
       Arm.spin(vex::directionType::rev, ArmSpeed, vex::velocityUnits::pct);
       Arm2.spin(vex::directionType::rev, ArmSpeed, vex::velocityUnits::pct);
     } else {
-        Arm.stop();
-        Arm2.stop();
+      Arm.stop();
+      Arm2.stop();
     }
     // Claw
-                                                      
-    if (Controller1.ButtonL1.pressing())  {
+
+    if (Controller1.ButtonL1.pressing()) {
       ClawLeft.spin(vex::directionType::fwd, ClawSpeed,
                     vex::velocityUnits::pct);
       ClawRight.spin(vex::directionType::fwd, ClawSpeed,
@@ -258,21 +349,13 @@ void usercontrol(void) {
 
     // Adjust Claw Speed
 
-     (Controller1.ButtonDown.pressed(ClawSpeedDown));
-     (Controller1.ButtonUp.pressed(ClawSpeedUp)); 
-     (Controller1.ButtonRight.pressed(ClawReset));
+    (Controller1.ButtonDown.pressed(ClawSpeedDown));
+    (Controller1.ButtonUp.pressed(ClawSpeedUp));
+    (Controller1.ButtonRight.pressed(ClawReset));
 
-    
- 
-
-  
-  
-
-
-wait(20, msec); // Sleep the task for a short amount of time to
-                // prevent wasted resources.
-}
-
+    wait(20, msec); // Sleep the task for a short amount of time to
+                    // prevent wasted resources.
+  }
 }
 //
 // Main will set up the competition functions and callbacks.

@@ -12,6 +12,7 @@ extern controller Controller1;
 extern motor ClawLeft;
 extern motor ClawRight;
 extern motor Arm2;
+extern sonar RearRange;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Text.
